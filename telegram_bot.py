@@ -27,4 +27,7 @@ def send_message(text, token, chat_id, proxy=None):
         proxies=proxies,
         timeout=10,
     )
-    response.raise_for_status()
+    try:
+        response.raise_for_status()
+    except requests.HTTPError:
+        raise RuntimeError(f"Telegram ответил ошибкой {response.status_code}") from None

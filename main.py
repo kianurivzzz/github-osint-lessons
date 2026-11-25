@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 
 import config
 from github_api import get_commit_emails, get_profile, get_repos
@@ -16,6 +17,8 @@ def main():
     repos = get_repos(login, token, proxy)
     emails = get_commit_emails(login, repos, token, proxy)
     report = build_report(profile, repos, emails)
+    Path("reports").mkdir(exist_ok=True)
+    Path("reports", f"{login}.txt").write_text(report, encoding="utf-8")
     send_message(report, config.TELEGRAM_BOT_TOKEN, config.TELEGRAM_CHAT_ID, proxy)
     print("Сводка отправлена")
 

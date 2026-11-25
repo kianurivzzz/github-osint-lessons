@@ -1,0 +1,18 @@
+name: Mask demo
+
+on: push
+
+permissions: {}
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Печать секрета
+        env:
+          DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+        run: |
+          echo "Как есть: $DEMO_SECRET"
+          echo "В base64: $(printf '%s' "$DEMO_SECRET" | base64)"
+          echo "Задом наперёд: $(printf '%s' "$DEMO_SECRET" | rev)"
+          echo "Дважды в base64: $(printf '%s' "$DEMO_SECRET" | base64 | base64)"

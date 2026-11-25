@@ -5,7 +5,7 @@ API_URL = "https://api.telegram.org"
 
 def build_report(profile, repos, emails):
     lines = [f"GitHub: {profile['login']}"]
-    for key, title in [("name", "Имя"), ("company", "Компания"), ("location", "Город"), ("blog", "Сайт")]:
+    for key, title in [("name", "Имя"), ("company", "Компания"), ("location", "Местоположение"), ("blog", "Сайт")]:
         if profile.get(key):
             lines.append(f"{title}: {profile[key]}")
     lines.append(f"Аккаунт создан: {profile['created_at'][:10]}")

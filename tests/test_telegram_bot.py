@@ -16,7 +16,7 @@ def test_build_report():
     report = telegram_bot.build_report(PROFILE, ["Hello-World"], ["octocat@example.com"])
 
     assert "GitHub: octocat" in report
-    assert "Город: San Francisco" in report
+    assert "Местоположение: San Francisco" in report
     assert "Компания" not in report
     assert "Аккаунт создан: 2011-01-25" in report
     assert "octocat@example.com" in report

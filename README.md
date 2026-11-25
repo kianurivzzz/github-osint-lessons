@@ -21,7 +21,7 @@ python main.py octocat
 ## Тесты
 
 ```bash
-pytest
+pytest -v
 ```
 
 ## Как предложить изменение

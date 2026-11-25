@@ -21,7 +21,7 @@ jobs:
       - run: pip install ruff==0.17.3
       - run: ruff check --output-format=github .
 
-  test:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

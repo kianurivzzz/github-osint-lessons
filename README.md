@@ -23,3 +23,7 @@ python main.py octocat
 ```bash
 pytest
 ```
+
+## Как предложить изменение
+
+Порядок работы описан в [CONTRIBUTING.md](CONTRIBUTING.md). Об уязвимостях сообщай по [SECURITY.md](SECURITY.md).
